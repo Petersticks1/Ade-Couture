@@ -50,7 +50,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
       />
 
       {/* Modal */}
-      <div className="relative bg-white w-full max-w-[960px] max-h-[90vh] overflow-y-auto animate-fade-up flex flex-col lg:flex-row">
+      <div data-lenis-prevent className="relative bg-white w-full max-w-[960px] max-h-[90vh] overflow-y-auto animate-fade-up flex flex-col lg:flex-row">
         {/* Close */}
         <button
           aria-label="Close product details"

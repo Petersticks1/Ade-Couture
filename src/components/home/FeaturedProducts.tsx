@@ -23,7 +23,7 @@ export default function FeaturedProducts() {
                        flex items-center gap-2 hover:gap-3 transition-all duration-300 hidden sm:flex"
             aria-label="View full collection"
           >
-            View All <ArrowRight size={14} strokeWidth={2} />
+            View All <FaArrowRight size={12} />
           </Link>
         </div>
 
@@ -40,7 +40,7 @@ export default function FeaturedProducts() {
             className="font-body text-[12px] font-semibold tracking-[0.15em] uppercase text-black
                        flex items-center justify-center gap-2"
           >
-            View Full Collection <ArrowRight size={14} strokeWidth={2} />
+            View Full Collection <FaArrowRight size={12} />
           </Link>
         </div>
       </div>

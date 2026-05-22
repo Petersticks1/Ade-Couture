@@ -13,7 +13,7 @@ export default function BrandStripSection() {
         </p>
         <div className="w-16 h-px bg-white/20 mx-auto mt-10" />
         <p className="font-body text-[11px] font-semibold tracking-[0.25em] uppercase text-white/40 mt-6">
-          Ade's Couture — Lagos, Nigeria
+          Ade's Couture — Abeokuta, Nigeria
         </p>
       </div>
     </section>

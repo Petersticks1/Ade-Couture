@@ -1,17 +1,19 @@
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
+import womenImg from '../../assets/image24.jpeg';
+import menImg from '../../assets/image27.jpeg';
 
 const tiles = [
   {
     label: "Women's Collection",
     to: '/shop?gender=women',
-    image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&auto=format&fit=crop&q=80',
+    image: womenImg,
     alt: "Women's fashion collection",
   },
   {
     label: "Men's Collection",
     to: '/shop?gender=men',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80',
+    image: menImg,
     alt: "Men's fashion collection",
   },
 ];
@@ -25,13 +27,13 @@ export default function CategoryTiles() {
           to={to}
           aria-label={label}
           className="group relative overflow-hidden block"
-          style={{ aspectRatio: '4/3' }}
+          style={{ aspectRatio: '3/4' }}
         >
           {/* Background image */}
           <img
             src={image}
             alt={alt}
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
 
@@ -47,7 +49,7 @@ export default function CategoryTiles() {
               <span className="font-body text-white text-[12px] font-semibold tracking-[0.15em] uppercase">
                 Explore
               </span>
-              <ArrowRight size={14} className="text-white" strokeWidth={2} />
+              <FaArrowRight size={12} className="text-white" />
             </div>
           </div>
         </Link>

@@ -2,7 +2,7 @@
 
 @theme {
   --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Raleway', 'Helvetica Neue', sans-serif;
+  --font-body: 'Josefin Sans', 'Helvetica Neue', sans-serif;
 
   --color-off-white: #F7F7F5;
   --color-charcoal: #1A1A1A;
@@ -13,6 +13,14 @@
 
 /* ── Global ── */
 *, *::before, *::after { box-sizing: border-box; }
+
+/* Global rounded corners for all interactive controls */
+button:not(.rounded-full):not([class*="rounded-none"]),
+select,
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0.5rem; /* rounded-lg */
+}
 
 html {
   scroll-behavior: smooth;

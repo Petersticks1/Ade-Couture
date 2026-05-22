@@ -14,9 +14,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {/* Col 1 — Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300" aria-label="Ade's Couture — Home">
-              <img src={logoSrc} alt="Ade's Couture monogram" className="h-12 w-auto invert" />
-              <span className="font-display italic text-white text-[26px] leading-none">
+            <Link to="/" className="flex items-center hover:opacity-80 transition-opacity duration-300" aria-label="Ade's Couture — Home">
+              <img src={logoSrc} alt="Ade's Couture monogram" className="h-16 w-auto invert" />
+              <span className="font-display italic text-white text-[26px] leading-none -ml-6">
                 Ade's Couture
               </span>
             </Link>
@@ -24,7 +24,7 @@ export default function Footer() {
               Dressed for Every Story. Premium fashion crafted with intention, delivered with a personal touch.
             </p>
             <div className="flex items-center gap-4 mt-6">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+              <a href="https://www.instagram.com/ade_scouture?igsh=d3B3dWkwZ2llamh3" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
                 className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white transition-all duration-300">
                 <FaInstagram size={15} />
               </a>
@@ -55,7 +55,6 @@ export default function Footer() {
                 { to: '/shop', label: 'Shop' },
                 { to: '/about', label: 'About' },
                 { to: '/contact', label: 'Contact' },
-                { to: '/contact#custom-design', label: 'Custom Design' },
               ].map(({ to, label }) => (
                 <li key={to}>
                   <Link
@@ -108,7 +107,7 @@ export default function Footer() {
               <li className="pt-2">
                 <p className="font-body text-[12px] text-white/40 tracking-widest uppercase mb-1">Hours</p>
                 <p className="font-body text-[14px] text-white/60">Mon – Sat: 9am – 7pm WAT</p>
-                <p className="font-body text-[12px] text-white/40 mt-1">Lagos, Nigeria · Ships Nationwide</p>
+                <p className="font-body text-[12px] text-white/40 mt-1">Ita Eko Surulere Ore Meji Junction, Abeokuta, Ogun State</p>
               </li>
             </ul>
           </div>
@@ -117,13 +116,12 @@ export default function Footer() {
 
       {/* Bottom strip */}
       <div className="border-t border-white/10">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="font-body text-[12px] text-white/40">
-            © {currentYear} Ade's Couture. All rights reserved.
-          </p>
-          <p className="font-body text-[12px] text-white/40">
-            Made with ♥ in Lagos
-          </p>
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-5 flex items-center justify-center gap-1.5 flex-wrap">
+          <span className="font-display italic text-white text-[13px]">Ade's Couture</span>
+          <span className="font-body text-white/40 text-[12px]">© {currentYear} All rights reserved</span>
+          <span className="font-body text-white/20 text-[12px]">|</span>
+          <span className="font-body text-white/40 text-[12px]">By</span>
+          <span className="font-body text-white text-[12px] font-semibold tracking-wide">Dammjay</span>
         </div>
       </div>
     </footer>

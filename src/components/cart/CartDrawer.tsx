@@ -57,7 +57,7 @@ export default function CartDrawer() {
         </div>
 
         {/* Items or empty state */}
-        <div className="flex-1 overflow-y-auto px-6">
+        <div data-lenis-prevent className="flex-1 overflow-y-auto px-6">
           {state.items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-center py-16">
               <FaShoppingBag size={44} className="text-light-gray mb-4" />

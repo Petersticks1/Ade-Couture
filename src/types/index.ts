@@ -1,4 +1,4 @@
-export type Gender = 'men' | 'women';
+export type Gender = 'men' | 'women' | 'unisex';
 export type Size = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL';
 export type Category = 'dress' | 'top' | 'bottom' | 'set' | 'outerwear' | 'suit' | 'other';
 

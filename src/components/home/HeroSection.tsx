@@ -2,32 +2,35 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowDown } from 'react-icons/fa';
 import Button from '../ui/Button';
+import menImg from '../../assets/image3.jpeg';
+import womenImg from '../../assets/image5.jpeg';
 
-// High-fashion editorial images — focal point set to upper-body so the crop works
-// on both portrait (mobile) and landscape (desktop) viewports
+// High-fashion editorial images — actual Ade's Couture brand photography
 const slides = [
   {
     id: 'women',
     label: "Women's Collection",
-    image:
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1920&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.22&q=85',
-    alt: "Elegantly dressed fashion woman — Ade's Couture women's collection",
+    image: womenImg,
+    alt: "Woman wearing Ade's Couture streetwear — camo shorts, black mesh tee and AC cap",
   },
   {
     id: 'men',
     label: "Men's Collection",
-    image:
-      'https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=1920&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.20&q=85',
-    alt: "Well-dressed fashion man — Ade's Couture men's collection",
+    image: menImg,
+    alt: "Man wearing Ade's Couture — white mesh tee and camo cargo trousers",
   },
 ];
 
-const INTERVAL_MS = 6000;
-const FADE_MS    = 1400; // must match CSS transition duration
+const INTERVAL_MS = 30000;
+const FADE_MS = 1400; // must match CSS transition duration
 
-export default function HeroSection() {
-  const [activeIndex, setActiveIndex]   = useState(0);
-  const [prevIndex,   setPrevIndex]     = useState<number | null>(null);
+interface HeroSectionProps {
+  onRequestDesign: () => void;
+}
+
+export default function HeroSection({ onRequestDesign }: HeroSectionProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState<number | null>(null);
   const [transitioning, setTransitioning] = useState(false);
 
   const goTo = (index: number) => {
@@ -58,7 +61,7 @@ export default function HeroSection() {
       {/* ── Slideshow images ── */}
       {slides.map((slide, i) => {
         const isActive = i === activeIndex;
-        const isPrev   = i === prevIndex;
+        const isPrev = i === prevIndex;
         return (
           <img
             key={slide.id}
@@ -70,7 +73,7 @@ export default function HeroSection() {
               opacity: isActive ? 1 : 0,
               transition: `opacity ${FADE_MS}ms cubic-bezier(0.4,0,0.2,1)`,
               zIndex: isActive ? 2 : isPrev ? 1 : 0,
-              objectPosition: 'center 15%',
+              objectPosition: 'center 5%',
             }}
             fetchPriority={i === 0 ? 'high' : 'low'}
           />
@@ -108,7 +111,7 @@ export default function HeroSection() {
             className="font-body text-[11px] font-semibold tracking-[0.3em] uppercase text-white/60 animate-fade-up"
             style={{ animationFillMode: 'both' }}
           >
-            {slides[activeIndex].label} · 2025
+            {slides[activeIndex].label} · 2026
           </p>
         </div>
 
@@ -144,26 +147,25 @@ export default function HeroSection() {
 
         {/* CTAs */}
         <div
-          className="flex flex-col sm:flex-row items-start gap-4 pb-12 lg:pb-16 animate-fade-up delay-400"
+          className="flex flex-col sm:flex-row items-start gap-4 pb-12 lg:pb-16 animate-fade-up delay-400 w-full sm:w-auto"
           style={{ animationFillMode: 'both' }}
         >
-          <Link to="/shop">
+          <Link to="/shop" className="w-full sm:w-auto block">
             <Button
               variant="secondary"
               size="lg"
-              className="!bg-white !text-black !border-white hover:!bg-transparent hover:!text-white"
+              className="!bg-white !text-black !border-white hover:!bg-transparent hover:!text-white w-full sm:w-[240px]"
             >
               Shop Now
             </Button>
           </Link>
-          <Link to="/contact#custom-design">
-            <Button
-              size="lg"
-              className="!bg-transparent !text-white !border-white hover:!bg-white hover:!text-black"
-            >
-              Request a Design
-            </Button>
-          </Link>
+          <Button
+            size="lg"
+            className="!bg-transparent !text-white !border-white hover:!bg-white hover:!text-black w-full sm:w-[240px]"
+            onClick={onRequestDesign}
+          >
+            Request a Design
+          </Button>
         </div>
       </div>
 
@@ -184,15 +186,7 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* ── Scroll indicator ── */}
-      <div
-        className="absolute bottom-8 right-8 lg:right-10 z-[6] flex flex-col items-center gap-2 animate-fade-in delay-600"
-        style={{ animationFillMode: 'both' }}
-        aria-hidden="true"
-      >
-        <div className="h-12 w-px bg-white/30" />
-        <ArrowDown size={16} className="text-white/50" strokeWidth={1.5} />
-      </div>
+
     </section>
   );
 }

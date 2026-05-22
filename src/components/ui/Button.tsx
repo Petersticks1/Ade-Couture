@@ -36,7 +36,7 @@ export default function Button({
       className={`
         inline-flex items-center justify-center gap-2
         font-body font-semibold tracking-[0.12em] uppercase
-        transition-all duration-300 cursor-pointer
+        rounded-lg transition-all duration-300 cursor-pointer
         disabled:opacity-40 disabled:cursor-not-allowed
         ${variantStyles[variant]}
         ${sizeStyles[size]}

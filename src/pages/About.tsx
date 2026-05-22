@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom';
-import { FaAward, FaCut, FaHeart, FaGlobe } from 'react-icons/fa';
+import { FaAward, FaCut, FaHeart, FaGlobe, FaMapMarkerAlt, FaClock, FaPhone, FaEnvelope } from 'react-icons/fa';
 import Button from '../components/ui/Button';
 import SectionLabel from '../components/ui/SectionLabel';
+import aboutImg from '../assets/image29.jpeg';
+import { WA_NUMBER } from '../lib/whatsapp';
 
 const values = [
-  { icon: FaAward,  title: 'Quality',        desc: 'Every piece is crafted from premium materials, with a commitment to excellence in every stitch.' },
-  { icon: FaCut,    title: 'Craftsmanship',   desc: 'Expert tailoring with attention to the smallest details — fit, proportion, and finish.' },
-  { icon: FaHeart,  title: 'Inclusivity',     desc: 'We design for every body, every story, and every occasion. Fashion belongs to everyone.' },
-  { icon: FaGlobe,  title: 'Made in Lagos',   desc: 'Proudly Nigerian, globally inspired. Supporting local artisans and the African fashion scene.' },
+  { icon: FaAward,  title: 'Premium Quality',   desc: 'Every AC piece is made from top-tier fabrics and materials — built to look sharp and last long.' },
+  { icon: FaCut,    title: 'AC Brand',           desc: 'All our clothing carries the Ade\'s Couture identity — bold logo graphics, distinctive silhouettes, and signature branding.' },
+  { icon: FaHeart,  title: 'For Everyone',       desc: 'AC drops are designed for both men and women. Style has no gender — our collections reflect that.' },
+  { icon: FaGlobe,  title: 'Made in Abeokuta',   desc: 'Proudly Nigerian. Our brand is rooted in Abeokuta, Ogun State, with a vision that stretches across Africa and beyond.' },
 ];
 
 export default function About() {
@@ -29,19 +31,19 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Text */}
             <div>
-              <SectionLabel>Founded in Lagos</SectionLabel>
+              <SectionLabel>Founded in Abeokuta</SectionLabel>
               <h2 className="font-display text-[32px] lg:text-[40px] text-black font-light leading-tight mb-6">
-                Where Fashion Meets Intention
+                Wear the Brand. Own the Look.
               </h2>
               <div className="space-y-5 font-body text-[15px] text-mid-gray leading-[1.8]">
                 <p>
-                  Ade's Couture was born from a deep love of self-expression and a belief that clothing should make you feel powerful, beautiful, and wholly yourself. Founded in the heart of Lagos, we design for the modern Nigerian — bold, dynamic, and endlessly stylish.
+                  Ade's Couture is a Nigerian fashion brand built on one simple belief: that everyone deserves to wear something they’re proud of. We create and sell our own line of AC-branded clothing — bold, quality pieces for men and women who know their style.
                 </p>
                 <p>
-                  What started as a small bespoke studio has grown into a curated fashion brand, serving style-conscious men and women across Nigeria and the diaspora. Every piece we create carries the same intention: to tell your story, on your terms.
+                  From signature tracksuits and graphic tees to leather sets and co-ords, every item in our collection carries the AC identity. No middlemen. No generic fashion. Just our brand, our vision, and pieces made to stand out.
                 </p>
                 <p>
-                  We work with skilled local artisans, source premium fabrics, and approach every design — whether off-the-rack or fully custom — with the same meticulous care and creative vision that has defined us from the beginning.
+                  Whether you're shopping online or reaching us directly, every AC piece you own is a statement — and we stand behind every single one.
                 </p>
               </div>
             </div>
@@ -50,9 +52,9 @@ export default function About() {
             <div className="relative">
               <div className="aspect-[4/5] overflow-hidden bg-[#f5f5f5]">
                 <img
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&auto=format&fit=crop&q=80"
+                  src={aboutImg}
                   alt="Ade's Couture — founder and studio"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
               </div>
@@ -90,13 +92,101 @@ export default function About() {
       <section aria-label="Brand promise" className="bg-black py-20 lg:py-28 text-center">
         <div className="max-w-[700px] mx-auto px-6">
           <p className="font-display italic text-white text-[24px] lg:text-[32px] font-light leading-[1.5]">
-            "We don't just make clothes.<br />We craft confidence."
+            "We don't just sell clothes.<br />We sell the AC experience."
           </p>
         </div>
       </section>
 
+      {/* Visit Our Store */}
+      <section aria-label="Visit Our Store" className="py-20 lg:py-28 bg-white">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Info */}
+            <div>
+              <SectionLabel>Location</SectionLabel>
+              <h2 className="font-display text-[32px] lg:text-[40px] text-black font-light leading-tight mb-10">
+                Visit Our Store
+              </h2>
+              <div className="space-y-8">
+                {/* Address */}
+                <div className="flex items-start gap-5">
+                  <div className="w-12 h-12 rounded-full bg-off-white flex items-center justify-center shrink-0">
+                    <FaMapMarkerAlt size={18} className="text-black" />
+                  </div>
+                  <div>
+                    <h3 className="font-body text-[15px] font-semibold text-black mb-1">Address</h3>
+                    <p className="font-body text-[14px] text-mid-gray leading-relaxed max-w-[300px]">
+                      Ita Eko Surulere Ore Meji Junction, Abeokuta, Ogun State
+                    </p>
+                  </div>
+                </div>
+                {/* Hours */}
+                <div className="flex items-start gap-5">
+                  <div className="w-12 h-12 rounded-full bg-off-white flex items-center justify-center shrink-0">
+                    <FaClock size={18} className="text-black" />
+                  </div>
+                  <div>
+                    <h3 className="font-body text-[15px] font-semibold text-black mb-1">Hours</h3>
+                    <p className="font-body text-[14px] text-mid-gray leading-relaxed">
+                      Monday – Saturday, 9:00am – 7:00pm WAT
+                    </p>
+                  </div>
+                </div>
+                {/* Phone */}
+                <div className="flex items-start gap-5">
+                  <div className="w-12 h-12 rounded-full bg-off-white flex items-center justify-center shrink-0">
+                    <FaPhone size={18} className="text-black" />
+                  </div>
+                  <div>
+                    <h3 className="font-body text-[15px] font-semibold text-black mb-1">Phone</h3>
+                    <p className="font-body text-[14px] text-mid-gray leading-relaxed">
+                      +{WA_NUMBER}
+                    </p>
+                  </div>
+                </div>
+                {/* Email */}
+                <div className="flex items-start gap-5">
+                  <div className="w-12 h-12 rounded-full bg-off-white flex items-center justify-center shrink-0">
+                    <FaEnvelope size={18} className="text-black" />
+                  </div>
+                  <div>
+                    <h3 className="font-body text-[15px] font-semibold text-black mb-1">Email</h3>
+                    <p className="font-body text-[14px] text-mid-gray leading-relaxed">
+                      hello@adescouture.com
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-12">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Ita+Eko+Surulere+Ore+Meji+Junction,+Abeokuta,+Ogun+State"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <Button variant="primary" size="lg">Get Directions</Button>
+                </a>
+              </div>
+            </div>
+            {/* Map Embed */}
+            <div className="w-full h-[400px] lg:h-[600px] bg-gray-100 overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.8475200384877!2d3.3320703!3d7.1436154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103a4b001a1c3e91%3A0x6e2c1e84a229cb0!2sIta%20Eko%2C%20Abeokuta!5e0!3m2!1sen!2sng!4v1716301234567!5m2!1sen!2sng"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ade's Couture Store Location"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section aria-label="Shop call to action" className="py-20 lg:py-24 bg-white text-center">
+      <section aria-label="Shop call to action" className="py-20 lg:py-24 bg-off-white text-center">
         <SectionLabel>Explore the Range</SectionLabel>
         <h2 className="font-display text-[32px] lg:text-[40px] text-black font-light mb-8">
           Shop the Collection

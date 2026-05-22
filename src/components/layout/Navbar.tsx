@@ -53,16 +53,16 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-1 hover:opacity-80 transition-opacity duration-300 group"
+            className="flex items-center hover:opacity-80 transition-opacity duration-300 group"
             onClick={() => setMobileOpen(false)}
             aria-label="Ade's Couture — Home"
           >
             <img
               src={logoSrc}
               alt="Ade's Couture monogram"
-              className="h-12 w-auto invert"
+              className="h-16 w-auto invert"
             />
-            <span className="font-display italic text-white text-[20px] tracking-wide leading-none">
+            <span className="font-display italic text-white text-[20px] tracking-wide leading-none -ml-6">
               Ade's Couture
             </span>
           </Link>
@@ -172,14 +172,14 @@ export default function Navbar() {
 
           {/* Bottom social */}
           <div className="px-10 pb-10 flex items-center gap-6">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white/60 hover:text-white transition-colors">
+            <a href="https://www.instagram.com/ade_scouture?igsh=d3B3dWkwZ2llamh3" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white/60 hover:text-white transition-colors">
               <FaInstagram size={18} />
             </a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white/60 hover:text-white transition-colors">
               <FaFacebookF size={18} />
             </a>
             <span className="font-body text-white/40 text-[12px] tracking-widest uppercase ml-auto">
-              Lagos, Nigeria
+              Abeokuta, Ogun State
             </span>
           </div>
         </div>

@@ -1,6 +1,5 @@
 import { FaWhatsapp, FaEnvelope, FaPhone, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
 import ContactForm from '../components/contact/ContactForm';
-import CustomDesignForm from '../components/contact/CustomDesignForm';
 import SectionLabel from '../components/ui/SectionLabel';
 import { WA_NUMBER, buildInquiryMessage, openWhatsApp } from '../lib/whatsapp';
 
@@ -32,7 +31,7 @@ export default function Contact() {
               <div className="space-y-7">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-black flex items-center justify-center shrink-0 mt-0.5">
-                    <MessageCircle size={16} strokeWidth={1.5} />
+                    <FaWhatsapp size={15} />
                   </div>
                   <div>
                     <p className="font-body text-[11px] font-semibold tracking-[0.15em] uppercase text-mid-gray mb-1">WhatsApp</p>
@@ -49,7 +48,7 @@ export default function Contact() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-black flex items-center justify-center shrink-0 mt-0.5">
-                    <Mail size={16} strokeWidth={1.5} />
+                    <FaEnvelope size={15} />
                   </div>
                   <div>
                     <p className="font-body text-[11px] font-semibold tracking-[0.15em] uppercase text-mid-gray mb-1">Email</p>
@@ -61,7 +60,7 @@ export default function Contact() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-black flex items-center justify-center shrink-0 mt-0.5">
-                    <Phone size={16} strokeWidth={1.5} />
+                    <FaPhone size={15} />
                   </div>
                   <div>
                     <p className="font-body text-[11px] font-semibold tracking-[0.15em] uppercase text-mid-gray mb-1">Phone</p>
@@ -73,7 +72,7 @@ export default function Contact() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-black flex items-center justify-center shrink-0 mt-0.5">
-                    <Clock size={16} strokeWidth={1.5} />
+                    <FaClock size={15} />
                   </div>
                   <div>
                     <p className="font-body text-[11px] font-semibold tracking-[0.15em] uppercase text-mid-gray mb-1">Business Hours</p>
@@ -84,12 +83,12 @@ export default function Contact() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-black flex items-center justify-center shrink-0 mt-0.5">
-                    <MapPin size={16} strokeWidth={1.5} />
+                    <FaMapMarkerAlt size={15} />
                   </div>
                   <div>
                     <p className="font-body text-[11px] font-semibold tracking-[0.15em] uppercase text-mid-gray mb-1">Location</p>
-                    <p className="font-body text-[15px] text-charcoal">Lagos, Nigeria</p>
-                    <p className="font-body text-[13px] text-mid-gray">Ships Nationwide · International available</p>
+                    <p className="font-body text-[15px] text-charcoal">Ita Eko Surulere Ore Meji Junction</p>
+                    <p className="font-body text-[13px] text-mid-gray">Abeokuta, Ogun State · Ships Nationwide</p>
                   </div>
                 </div>
               </div>
@@ -106,9 +105,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      {/* Custom design form */}
-      <CustomDesignForm />
     </div>
   );
 }
