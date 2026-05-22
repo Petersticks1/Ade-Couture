@@ -33,12 +33,10 @@ export default function FeaturedProducts() {
           ))}
         </div>
 
-        {/* Mobile view all */}
-        <div className="mt-10 text-center sm:hidden">
+        <div className="mt-10 sm:hidden">
           <Link
             to="/shop"
-            className="font-body text-[12px] font-semibold tracking-[0.15em] uppercase text-black
-                       flex items-center justify-center gap-2"
+            className="w-full bg-black text-white font-body text-[12px] font-bold tracking-[0.15em] uppercase px-8 py-4 rounded-lg flex items-center justify-center gap-3 transition-transform active:scale-[0.98]"
           >
             View Full Collection <FaArrowRight size={12} />
           </Link>

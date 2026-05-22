@@ -53,16 +53,16 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center hover:opacity-80 transition-opacity duration-300 group"
+            className="flex items-center hover:opacity-80 transition-opacity duration-300 group -ml-4 lg:-ml-2"
             onClick={() => setMobileOpen(false)}
             aria-label="Ade's Couture — Home"
           >
             <img
               src={logoSrc}
               alt="Ade's Couture monogram"
-              className="h-16 w-auto invert"
+              className="h-14 lg:h-16 w-auto invert"
             />
-            <span className="font-display italic text-white text-[20px] tracking-wide leading-none -ml-6">
+            <span className="font-display italic text-white text-[18px] lg:text-[20px] tracking-wide leading-none -ml-5 lg:-ml-6">
               Ade's Couture
             </span>
           </Link>

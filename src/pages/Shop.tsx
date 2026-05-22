@@ -4,12 +4,14 @@ import { products } from '../data/products';
 import type { Gender } from '../types';
 import FilterBar from '../components/shop/FilterBar';
 import ProductGrid from '../components/shop/ProductGrid';
-
+import CustomDesignCTA from '../components/home/CustomDesignCTA';
+import CustomOrderModal from '../components/ui/CustomOrderModal';
 type SortKey = 'newest' | 'price-asc' | 'price-desc';
 
 export default function Shop() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [sort, setSort] = useState<SortKey>('newest');
+  const [modalOpen, setModalOpen] = useState(false);
 
   const genderParam = searchParams.get('gender') as Gender | null;
   const gender = (genderParam === 'men' || genderParam === 'women') ? genderParam : 'all';
@@ -58,6 +60,9 @@ export default function Shop() {
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-12 lg:py-16">
         <ProductGrid products={filtered} onResetFilters={() => setGender('all')} />
       </div>
+      
+      <CustomDesignCTA onRequestDesign={() => setModalOpen(true)} />
+      <CustomOrderModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 }

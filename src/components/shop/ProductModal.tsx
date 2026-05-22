@@ -177,7 +177,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                   variant="secondary"
                   size="lg"
                   fullWidth
-                  onClick={() => openWhatsApp(buildInquiryMessage())}
+                  onClick={() => openWhatsApp(buildInquiryMessage(product.name))}
                 >
                   <FaWhatsapp size={15} />
                   Enquire on WhatsApp

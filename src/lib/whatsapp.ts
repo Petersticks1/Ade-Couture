@@ -14,13 +14,15 @@ export function buildOrderMessage(items: CartItem[], note?: string): string {
 
   let message = `Hello Ade's Couture! 👗 I'd like to place an order:\n\n${lines.join('\n\n')}\n\n🧾 Subtotal: ${formatPrice(subtotal)}`;
   if (note?.trim()) message += `\n📝 Note: ${note.trim()}`;
-  message += `\n\nPlease confirm availability and payment details. Thank you!`;
+  message += `\n\n*(Please attach a screenshot of the items you ordered so we can easily verify!)*\n\nPlease confirm availability and payment details. Thank you!`;
 
   return message;
 }
 
-export function buildInquiryMessage(name?: string): string {
-  if (name) return `Hello Ade's Couture! My name is ${name} and I'd like to make an inquiry about your collection.`;
+export function buildInquiryMessage(productName?: string): string {
+  if (productName) {
+    return `Hello Ade's Couture! I'd like to inquire about this piece: *${productName}* 👗\n\n*(Please attach a screenshot of the item here so we can see exactly what you want!)*`;
+  }
   return `Hello Ade's Couture! I'd like to inquire about your collection. 👗`;
 }
 

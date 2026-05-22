@@ -9,16 +9,6 @@ interface CustomOrderModalProps {
 
 const WA_NUMBER = '2348102042019';
 
-const clothingTypes = [
-  'Dress', 'Suit', 'Gown (Evening/Bridal)', 'Skirt & Top Set', 'Matching Set',
-  'Blazer', 'Trouser & Shirt', 'Kaftan / Agbada', 'Jumpsuit', 'Other',
-];
-
-const occasions = [
-  'Wedding / Ceremony', 'Office / Corporate', 'Party / Night Out',
-  'Casual / Everyday', 'Photoshoot', 'Cultural / Traditional', 'Other',
-];
-
 const budgets = [
   'Under ₦20,000', '₦20,000 – ₦50,000', '₦50,000 – ₦100,000',
   '₦100,000 – ₦200,000', 'Above ₦200,000',
@@ -28,8 +18,7 @@ export default function CustomOrderModal({ isOpen, onClose }: CustomOrderModalPr
   const [form, setForm] = useState({
     name: '',
     phone: '',
-    clothingType: '',
-    occasion: '',
+
     description: '',
     colors: '',
     budget: '',
@@ -54,14 +43,14 @@ export default function CustomOrderModal({ isOpen, onClose }: CustomOrderModalPr
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg =
-      `👗 *Custom Order Request — Ade's Couture*\n\n` +
+      `👗 *Custom AC Piece Request — Ade's Couture*\n\n` +
       `*Name:* ${form.name}\n` +
       `*WhatsApp:* ${form.phone}\n` +
-      `*Clothing Type:* ${form.clothingType}\n` +
-      `*Occasion:* ${form.occasion}\n` +
+
       `*Budget:* ${form.budget}\n` +
       `*Colour Preference:* ${form.colors || 'Not specified'}\n\n` +
-      `*Description:*\n${form.description}`;
+      `*Description:*\n${form.description}\n\n` +
+      `*(Please attach any reference images or sketches of the style you want here!)*`;
 
     openWhatsApp(msg);
     setSent(true);
@@ -69,15 +58,15 @@ export default function CustomOrderModal({ isOpen, onClose }: CustomOrderModalPr
 
   const handleClose = () => {
     setSent(false);
-    setForm({ name: '', phone: '', clothingType: '', occasion: '', description: '', colors: '', budget: '' });
+    setForm({ name: '', phone: '', description: '', colors: '', budget: '' });
     onClose();
   };
 
   if (!isOpen) return null;
 
-  const inputCls = `w-full border border-brand-border px-4 py-3 font-body text-[14px] text-charcoal
-    focus:outline-none focus:border-black transition-colors placeholder:text-light-gray bg-white`;
-  const labelCls = 'block font-body text-[11px] font-semibold tracking-[0.15em] uppercase text-charcoal mb-2';
+  const inputCls = `w-full border border-black/10 px-4 py-3.5 font-body text-[14px] text-charcoal
+    focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-all placeholder:text-black/30 bg-[#fafafa] hover:bg-white`;
+  const labelCls = 'block font-body text-[11px] font-bold tracking-[0.15em] uppercase text-black mb-2';
 
   return (
     <>
@@ -95,30 +84,31 @@ export default function CustomOrderModal({ isOpen, onClose }: CustomOrderModalPr
         aria-label="Custom order request"
         className="fixed inset-0 z-[201] flex items-center justify-center p-4 pointer-events-none"
       >
-        <div className="
+        <div data-lenis-prevent className="
           bg-white w-full max-w-[580px] max-h-[90vh] overflow-y-auto
-          pointer-events-auto shadow-2xl
+          pointer-events-auto shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)]
           animate-fade-up
         ">
           {/* Header */}
-          <div className="flex items-start justify-between px-8 pt-8 pb-6 border-b border-brand-border">
-            <div>
-              <p className="font-body text-[10px] font-semibold tracking-[0.25em] uppercase text-mid-gray mb-1">
-                Bespoke Order
+          <div className="flex items-start justify-between px-8 pt-10 pb-8 bg-black relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-charcoal/50 to-black pointer-events-none" />
+            <div className="relative z-10">
+              <p className="font-body text-[10px] font-semibold tracking-[0.25em] uppercase text-white/50 mb-2">
+                Custom AC Piece
               </p>
-              <h2 className="font-display text-[26px] text-black font-light leading-tight">
-                Can't find what you want?
+              <h2 className="font-display text-[28px] text-white font-light leading-tight">
+                Design Your Perfect Fit
               </h2>
-              <p className="font-body text-[13px] text-mid-gray mt-2 leading-relaxed">
-                Describe your ideal piece — we'll bring it to life for you.
+              <p className="font-body text-[13px] text-white/70 mt-2 leading-relaxed">
+                Describe your ideal branded AC piece — we'll bring it to life for you.
               </p>
             </div>
             <button
               onClick={handleClose}
               aria-label="Close modal"
-              className="text-mid-gray hover:text-black transition-colors cursor-pointer mt-1 ml-4 shrink-0"
+              className="relative z-10 text-white/50 hover:text-white transition-colors cursor-pointer mt-1 ml-4 shrink-0 bg-white/10 p-2.5 rounded-full hover:bg-white/20"
             >
-              <FaTimes size={18} />
+              <FaTimes size={14} />
             </button>
           </div>
 
@@ -174,36 +164,6 @@ export default function CustomOrderModal({ isOpen, onClose }: CustomOrderModalPr
                   </div>
                 </div>
 
-                {/* Clothing type */}
-                <div>
-                  <label htmlFor="modal-type" className={labelCls}>Type of Clothing *</label>
-                  <select
-                    id="modal-type"
-                    required
-                    value={form.clothingType}
-                    onChange={e => update('clothingType', e.target.value)}
-                    className={`${inputCls} cursor-pointer`}
-                  >
-                    <option value="">Select a type...</option>
-                    {clothingTypes.map(t => <option key={t} value={t}>{t}</option>)}
-                  </select>
-                </div>
-
-                {/* Occasion */}
-                <div>
-                  <label htmlFor="modal-occasion" className={labelCls}>Occasion *</label>
-                  <select
-                    id="modal-occasion"
-                    required
-                    value={form.occasion}
-                    onChange={e => update('occasion', e.target.value)}
-                    className={`${inputCls} cursor-pointer`}
-                  >
-                    <option value="">Select an occasion...</option>
-                    {occasions.map(o => <option key={o} value={o}>{o}</option>)}
-                  </select>
-                </div>
-
                 {/* Description */}
                 <div>
                   <label htmlFor="modal-desc" className={labelCls}>Describe What You Have in Mind *</label>
@@ -214,7 +174,7 @@ export default function CustomOrderModal({ isOpen, onClose }: CustomOrderModalPr
                     value={form.description}
                     onChange={e => update('description', e.target.value)}
                     className={`${inputCls} resize-none`}
-                    placeholder="e.g. I want a flowy midi dress with long sleeves, something elegant for a wedding guest look, not too fitted..."
+                    placeholder="e.g. I want a custom branded AC tracksuit in a specific color, or a personalized graphic tee design..."
                   />
                 </div>
 
