@@ -7,7 +7,6 @@ interface CustomOrderModalProps {
   onClose: () => void;
 }
 
-const WA_NUMBER = '2348102042019';
 
 const budgets = [
   'Under ₦20,000', '₦20,000 – ₦50,000', '₦50,000 – ₦100,000',

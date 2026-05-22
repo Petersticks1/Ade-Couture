@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaArrowDown } from 'react-icons/fa';
+
 import Button from '../ui/Button';
 import menImg from '../../assets/image3.jpeg';
 import womenImg from '../../assets/image5.jpeg';

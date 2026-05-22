@@ -1,4 +1,4 @@
-import type { Gender, Category } from '../../types';
+import type { Gender } from '../../types';
 
 type SortKey = 'newest' | 'price-asc' | 'price-desc';
 

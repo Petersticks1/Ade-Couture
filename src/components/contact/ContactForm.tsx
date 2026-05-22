@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from '../ui/Button';
-import { openWhatsApp, buildInquiryMessage, WA_NUMBER } from '../../lib/whatsapp';
+import { openWhatsApp } from '../../lib/whatsapp';
 
 export default function ContactForm() {
   const [form, setForm] = useState({

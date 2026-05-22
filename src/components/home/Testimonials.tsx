@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaStar, FaChevronLeft, FaChevronRight, FaQuoteLeft } from 'react-icons/fa';
+import { FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import SectionLabel from '../ui/SectionLabel';
 
 const testimonials = [

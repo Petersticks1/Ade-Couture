@@ -1,6 +1,6 @@
 export type Gender = 'men' | 'women' | 'unisex';
-export type Size = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL';
-export type Category = 'dress' | 'top' | 'bottom' | 'set' | 'outerwear' | 'suit' | 'other';
+export type Size = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'One Size';
+export type Category = 'dress' | 'top' | 'bottom' | 'set' | 'outerwear' | 'suit' | 'accessories' | 'other';
 
 export interface SizeAvailability {
   XS?: boolean;
@@ -9,6 +9,7 @@ export interface SizeAvailability {
   L?: boolean;
   XL?: boolean;
   XXL?: boolean;
+  'One Size'?: boolean;
 }
 
 export interface Product {

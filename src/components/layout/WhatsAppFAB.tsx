@@ -34,7 +34,7 @@ export default function WhatsAppFAB() {
     setPos({ x: dragStart.current.px + dx, y: dragStart.current.py + dy });
   }, [dragging]);
 
-  const onPointerUp = useCallback((e: React.PointerEvent) => {
+  const onPointerUp = useCallback((_e: React.PointerEvent) => {
     setDragging(false);
     const snapped = snapToEdge(pos.x, pos.y);
     setPos(snapped);
