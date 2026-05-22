@@ -98,7 +98,8 @@ export default function Navbar() {
               {totalItems > 0 && (
                 <span
                   className={`
-                    absolute -top-2 -right-2 w-5 h-5 bg-white text-black
+                    absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1
+                    bg-white text-black ring-2 ring-black
                     rounded-full flex items-center justify-center
                     font-body text-[10px] font-bold
                     ${badgeAnimating ? 'animate-badge-pop' : ''}
